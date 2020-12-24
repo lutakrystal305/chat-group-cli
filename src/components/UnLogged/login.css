@@ -1,0 +1,157 @@
+
+.UnLogged {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    top: 70px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: 0px;
+}
+.UnLogged .bg-login {
+    position: absolute;
+    top: 0px;
+    overflow: hidden;
+    width:100%;
+    height:100%;
+}
+.UnLogged .bg-login img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.UnLogged .item-login {
+    margin-top:30px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: grba(255,255,255,0.05);
+    box-shadow: 10px 20px 10px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255, 0.5);
+    width: 450px;
+    height: 40px;
+    margin-left:auto;
+    margin-right: auto;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.UnLogged .item-login .on-item {
+    background: linear-gradient(50deg, #093028, #068332);
+    color: #EEE;
+    font-size: 20px;
+}
+.UnLogged .item-login .on-item:hover {
+    background: linear-gradient(50deg, #093028, #068332) !important;
+}
+.UnLogged .item-login h5:first-child {
+    border-right: 1px solid #AAA;
+}
+
+.UnLogged .item-login h5 {
+    font-size: 18px;
+    color: #CCC;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+.UnLogged .item-login h5:hover {
+    color: #EEE;
+    background: linear-gradient(60deg, #283c86, #45a247);
+    font-size: 20px;
+}
+.onAlert {
+    height: 400px !important;
+}
+.SignIn, .SignUp {
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+    height: 350px;
+    border: 1px solid rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.05);
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow:hidden;
+}
+.title-item h3 {
+    text-align: center;
+    color: #24ac1d;
+    text-shadow: 2px 2px 2px #123115;
+    font-size: 30px;
+}
+.body-form {
+    display: flex;
+    flex-direction: column;
+}
+.SignIn input, .SignUp input {
+    margin-top: 25px;
+    width: 80%;
+    height: 40px;
+    padding: 5px 15px 5px 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-color: #193f12;
+    color: #EEE;
+}
+.UnLogged input::placeholder {
+    color: #AAA;
+}
+.SignUp {
+    height: 480px !important;
+}
+
+.UnLogged input:focus {
+    background: linear-gradient(108deg, #000000, #0f9b0f);
+}
+
+.click-post {
+    margin-top: 30px;
+    width: 30%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(20deg, #dd3e54, #6be585);
+    color: #d3fbd3;
+    font-weight: bold;
+    font-size: 17px;
+}
+.click-post:hover {
+    background: linear-gradient(80deg, #654ea3, #eaafc8);
+    color: #EEE;
+    font-size: 19px;
+}
+.gender {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #BBB;
+    font-weight: bold;
+}
+.gender div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.gender input {
+    width: 20px;
+    margin: 0 5px 0 0 !important;
+    padding: unset;
+}

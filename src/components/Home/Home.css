@@ -1,0 +1,119 @@
+body {
+    background-color: #123112;
+  }
+  .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(183,217,214);
+    background: linear-gradient(5deg, rgba(183,217,214,1) 0%, rgba(57,221,70,1) 54%, rgba(243,250,251,1) 100%);
+    
+    clip-path: circle(600px at right 800px);
+  }
+  .c-noel {
+    background: rgb(183,217,214) !important;
+    background: linear-gradient(5deg, rgba(183,217,214,1) 0%, rgba(64,228,154,1) 54%, rgba(243,250,251,1) 100%) !important;
+  }
+  .c-logo {
+    background: rgb(160,246,232) !important;
+    background: linear-gradient(146deg, rgba(160,246,232,1) 0%, rgba(57,128,240,1) 54%, rgba(38,51,222,1) 100%) !important;
+  }
+  .bg-item {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+  }
+  .container {
+    position: relative;
+    top: 100px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    z-index: 1;
+  }
+  .container .card {
+    position: relative !important;
+    width: 280px !important;
+    height: 210px !important;
+    margin: 30px !important;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5) !important;
+    background-color: rgba(255,255,255, 0.1) !important;
+    overflow: hidden !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.5) !important;
+    border-left: 1px solid rgba(255,255,255,0.5) !important;
+    backdrop-filter: blur(5px) !important;
+    border-radius: 20px !important;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: transparent;
+    z-index: -1;
+  }
+  .card::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: transparent;
+    z-index: -2;
+    backdrop-filter: blur(5px);
+    filter: blur(50px)
+  }
+  .card::after {
+    background: linear-gradient(235deg, #89ff00, #060c21, #00bcd4)
+  }
+  .container .card .content {
+    padding: 20px;
+    text-align: center;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-300px);
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .container .card:hover .content {
+    transform: translateY(0px);
+    opacity:1;
+  }
+  .card .content .msg-logo {
+    position: relative;
+    left: 0px;
+  }
+  .card .content .zz {
+    color: #AAA;
+    width: 150px;
+    margin-right: 20px;
+  }
+  .card .content .zz h3 {
+    color: #ed10f0 !important;
+  }
+  .card .content .noel {
+    position: relative;
+    left: -40px;
+  }
+  .card .content .zzz h3{
+    color: #b9d7f6 !important
+  }
+  .card .content .zzz {
+    color: #AAA;
+  }
+  

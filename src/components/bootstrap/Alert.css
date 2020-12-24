@@ -1,0 +1,9 @@
+.alert-danger {
+    margin-left: 40px;
+    color: #d72436;
+    font-weight: bold;
+}
+.alert-danger .close {
+    background-color: #e72d29;
+    color: #DDD;
+}
