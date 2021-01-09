@@ -8,6 +8,7 @@ import Drawer from './material-ui/Drawer';
 const Top = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const authed = useSelector(state => checkLogged.state);
 
   const signOut = () => {
     dispatch({type: 'LOGOUT'});
@@ -27,7 +28,10 @@ const Top = () => {
           <Link to='/community' className= 'NavItem'>Community</Link>
           <Link to='/chat' className= 'NavItem'>Chat Group</Link>
           <Link to='/creator' className= 'NavItem'>About Us</Link>
-          <button onClick={signOut} className='btn-out' >Log out</button>
+          {authed.isAuthed ?
+            <button onClick={signOut} className='btn-out' >Log out</button>
+            :  <button className='btn-out' >Log In</button>
+          }
         </div>
       </div>
       <div className='user'>
