@@ -4,7 +4,7 @@
     left: 0%;
     width: 100%;
     display: flex;
-    aign-items: center;
+    align-items: center;
     border-bottom: 1px solid #124111;
     background-color: rgba(255,255,255,0.1);
     box-shadow: 20px 20px 50px rgba(0,0,0,0.2);
@@ -24,15 +24,40 @@
     list-style-type: none;
     margin: none !important;
   }
-  .anything div a {
+  .anything div .NavItem {
     padding: 23px 30px 23px 30px;
     color: #BBB;
   }
-  .anything div a:hover {
+  .anything div .NavItem:hover {
     border-left: 2px solid #BBB;
     border-right: 2px solid #BBB;
     background-color: #447c37 !important;
   }
-  .anything div a {
+  .anything div .NavItem {
     text-decoration: none;
+  }
+  .btn-out {
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 17px;
+    color: #FFF;
+    border: none;
+  }
+  .btn-out:hover {
+    font-size: 18px;
+    color: #257d5e;
+  }
+  .user {
+    position: relative;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end !important;
+  }
+  .user > div {
+    margin-right: 30px;
+  }
+  @media(max-width: 600px) {
+    .Top .NavItem {
+      display: none;
+    }
   }

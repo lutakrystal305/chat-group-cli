@@ -1,0 +1,11 @@
+export const USERSONLINE = 'USERSONLINE';
+export const TOPMESS = 'TOPMESS';
+export const BEMESS = 'BEMESS';
+export const FEMESS = 'FEMESS';
+export const BEROOMS = 'BEROOMS';
+export const NEWROOM ='NEWROOM';
+export const GETMEM ='GETMEM';
+export const YOURROOMS = 'YOURROOMS';
+export const APIMESS = 'APIMESS';
+export const ROOMNOW = 'ROOMNOW';
+export const LEAVEROOM ='LEAVEROOM';

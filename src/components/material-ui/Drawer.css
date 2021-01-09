@@ -1,0 +1,140 @@
+.Linkz, .navbar-brand {
+    color: #777 ;
+    font-weight: bold !important;
+}
+.Linkz:hover {
+    text-decoration: none;
+    color: #333;
+}
+.user {
+    display: flex;
+    justify-content: center;
+}
+.avt {
+    border-radius: 5000px;
+    border: 1px solid #AAA;
+    margin-right: 10px;
+}
+.user p {
+    position: relative;
+    top: 6px;
+    font-weight: bold;
+    color: #54DE27;
+    text-align: center;
+}
+.avt-user {
+    height: 40px;
+    border-radius: 500px;
+    border: 1px solid #BBB;
+}
+.avt-none-user {
+    width: 40px;
+    height: 40px;
+}
+.Link-user {
+    height: 70px;
+}
+.Link-user div, .Link-user {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.Link-user h6 {
+    position: relative;
+    color: #54DE27;
+    margin-left: 10px;
+    font-size: 17px;
+}
+.Link-user:hover {
+    text-decoration: none;
+    background-color: #444;
+}
+.Link-nav {
+    color: rgb(136, 122, 122);
+    font-weight: bold;
+    text-decoration: none;
+}
+.Linkz {
+    text-decoration: none;
+}
+.Linkz:hover {
+    color: #EEE;
+}
+.Link-item button {
+    width: 100%;
+    background: transparent;
+    color: #AAA;
+    border: none;
+    text-align:left;
+    font-size: 16px;
+}
+.Link-item button:hover {
+    color: #EEE;
+}
+.Link-item {
+    border-bottom: 1px solid #444 !important;
+}
+.Link-item:hover {
+    background-color: #444 !important;
+}
+.Link-nav:hover {
+    text-decoration: none;
+    color: #DDD;
+}
+.MuiPaper-root {
+    background-color: #222 !important;
+}
+.MuiDivider-root {
+    background-color: rgba(255,255,255,0.12) !important;
+}
+.Link-Mobile {
+    display:none !important;
+}
+.avt-none-user {
+    background-color: #54DE27;
+}
+.drawer .MuiPaper-root {
+    height: 75% !important;
+    top: unset !important;
+    bottom: 0px !important;
+    background-color: #7ba26d !important;
+}
+.drawer h6 {
+    font-size: 19px ;
+    margin: unset !important;
+    padding: 10px 20px;
+}
+.drawer .MuiDivider-root {
+    background-color: rgba(255,255,255, 0.6) !important;
+}
+.drawer .MuiList-root {
+    color: #DDD !important;
+}
+.drawer .Link-item:hover {
+    background-color: rgba(255,255,255,0.2) !important;
+    color: #FFF !important;
+}
+.drawer .Link-member {
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    justify-content: center;
+    overflow-y: scroll;
+}
+.drawer .Link-member p {
+    border-bottom: 1px solid #DDD;
+    height: 10%;
+}
+.drawer .Link-member p:hover {
+    background-color: rgba(255,255,255,0.2) !important;
+    color: #FFF !important;
+}
+.drawer .Link-member:hover {
+    background-color: #7ba26d !important;
+    color: #DDD !important;
+}
+@media (max-width:600px) {
+    .Link-Mobile {
+        display: flex !important;
+    }
+}

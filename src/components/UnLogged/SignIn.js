@@ -26,10 +26,11 @@ const SignIn = () => {
   }
   const checkAuth = (token) => {
 			axios
-				.post('http://localhost:9999/user/check', { token })
+				.post('https://chat-group-sv.herokuapp.com/user/check', { token })
 				.then((res) => {
 					console.log(res.data)
-					dispatch({type: 'AUTHED', dataUser: res.data})
+          dispatch({type: 'AUTHED', dataUser: res.data});
+          sessionStorage.setItem('user', JSON.stringify(res.data));
 				})
   }
   const handleLogin = () => {
@@ -48,13 +49,43 @@ const SignIn = () => {
         password: valuePass
       }
       axios
-        .post('http://localhost:9999/user/login', user)
+        .post('https://chat-group-sv.herokuapp.com/user/login', user)
         .then((res) => {
-          dispatch({type: 'LOGGED'});
+          console.log(res.data.token);
+          dispatch({type: 'LOGGED', token: res.data.token});
+          sessionStorage.setItem('token', res.data.token.toString());
           checkAuth(res.data.token);
           setValueMail('');
           setValuePass('');
         })
+    }
+  }
+  const handleKeyUp = (event) => {
+    if (event.keyCode === 13) {
+      if (validateMail.test(valueMail) === false) {
+        setErr(true);
+        setMsgErr('Your Mail was wrong syntax!');
+        setValueMail('');
+        setValuePass('');
+      } else if (validatePass.test(valuePass) === false) {
+        setErr(true);
+        setMsgErr('Your Password was wrong syntax!');
+        setValuePass('');
+      } else {
+        const user= {
+          email: valueMail,
+          password: valuePass
+        }
+        axios
+          .post('https://chat-group-sv.herokuapp.com/user/login', user)
+          .then((res) => {
+            dispatch({type: 'LOGGED', token: res.data.token});
+            sessionStorage.setItem('token', res.data.token.toString());
+            checkAuth(res.data.token);
+            setValueMail('');
+            setValuePass('');
+          })
+      }
     }
   }
   return(
@@ -71,8 +102,8 @@ const SignIn = () => {
           <ErrAlert isOpen={true}>{msgErr}</ErrAlert>
           : ''
         }
-        <input type='text' placeholder='Email' onChange={handleChangeMail} value={valueMail}/>
-        <input type='password' placeholder='Password' onChange={handleChangePass} value={valuePass} />
+        <input type='text' placeholder='Email' onKeyUp={handleKeyUp} onChange={handleChangeMail} value={valueMail}/>
+        <input type='password' placeholder='Password' onKeyUp={handleKeyUp} onChange={handleChangePass} value={valuePass} />
         <button onClick={handleLogin} className='click-post' > Login </button>
       </div>
     </div>

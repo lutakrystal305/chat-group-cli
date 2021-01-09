@@ -1,0 +1,87 @@
+.Footer {
+    position: relative;
+    top: 75px;
+    display: flex;
+    flex-direction: column;
+    background-color: #222 !important;
+    color: #DDD;
+    padding-top: 0px;
+}
+.Footer .footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Footer .Link-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #c4ee9e;
+    position: relative;
+}
+.Link-contact:hover {
+    text-decoration: none;
+    color: #67ecd3;  
+} 
+.Footer .Link-contact h6 {
+    margin-left: 15px;
+    
+}
+.Footer .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 60px;
+}
+.Footer .logo {
+    display: flex;
+    margin-left: 80px;
+    color: #9b80e0;
+}
+.Footer .address {
+    margin-right: 20px;
+    font-size: 12px;
+}
+.Footer .hr {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+.Footer .icon-moon {
+    position: relative;
+    top: 10px;
+    font-size: 25px;
+}
+.Footer .logo h2 {
+    margin-left: 15px;
+}
+.Footer .contact-mb {
+    display:none;
+}
+@media (max-width: 600px) {
+    .Footer .Link-contact h6 {
+        display: none;
+    }
+    .Footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .Footer .contact {
+        display: none;
+    }
+    .Footer .address {
+        display: none;
+    }
+    .Footer .contact-mb {
+        display: flex;
+        margin-bottom: 15px;
+    }
+    .Footer .contact-mb .Link-contact{
+        margin-left: 10px;
+    }
+    .Footer .logo {
+        margin-left: 0px !important;
+        margin-bottom: 15px;
+    }
+}

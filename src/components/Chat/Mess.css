@@ -1,0 +1,223 @@
+.Mess {
+    position: relative;
+    top: 80px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 87vh;
+}
+.Mess .tab-room {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+
+    border: 1px solid rgba(0,0,0,0.5);
+    height: 100%;
+}
+.Mess .tab-room .title-tab-room {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    background-color: rgba(255,255,255, 0.05);
+}
+.Mess .tab-room .title-tab-room img {
+    display: none;
+}
+.Mess .tab-room .body-tab-room {
+    background-color: rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(0,0,0,0.7);
+    overflow-y: scroll;
+    flex-grow: 4;
+    height: 80%;
+    
+}
+.Mess .tab-room .body-tab-room a {
+    text-decoration: none !important;
+}
+.Mess .tab-room .body-tab-room .each-room {
+    border: 1px solid #AAA;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+    
+}
+.Mess .tab-room .body-tab-room .roomNow {
+    background-color: #359355 !important;
+}
+.Mess .tab-room .body-tab-room .noti h5{
+    color: #da2632 !important;
+}
+.Mess .tab-room .body-tab-room .noti p {
+    color: #EEE !important;
+}
+.Mess .tab-room .body-tab-room .roomNow p {
+    color: #BBB !important;
+}
+.Mess .tab-room .body-tab-room .each-room .key {
+    display: none;
+}
+.Mess .tab-room .body-tab-room .each-room p {
+    color: #666;
+}
+.Mess .tab-room .body-tab-room .each-room h5 {
+    font-size: 18px;
+    color: #222;
+    margin: 15px;
+}
+.Mess .tab-room .body-tab-room .each-room:hover {
+    background-color: rgba(255,255,255, 0.1);
+}
+.Mess .tab-room .body-tab-room .each-room:hover p {
+    color: #CCC;
+}
+.Mess .tab-room .body-tab-room .each-room:hover h5 {
+    font-size: 19px;
+    color: #000;
+}
+.Mess .main-chat {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.5);
+    background-color: rgba(255,255,255, 0.15);
+}
+.Mess .main-chat .title-chat {
+    display: flex;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+    height: 7%;
+    padding: 20px 20px 20px 40px;
+    font-size: 22px;
+}
+.Mess .main-chat .title-chat .back {
+    display: none;
+}
+.Mess .main-chat .title-chat h4 {
+    flex-grow: 4;
+    float: left;
+    margin: 0 0 0 20px;
+    color: #CCC;
+}
+.Mess .main-chat .title-chat div img {
+    background-color: transparent;
+    border: unset;
+}
+.Mess .main-chat .body-chat {
+    display: flex;
+    flex-direction: column;
+    height: 87%;
+    overflow: auto;
+    position: relative;
+    background: linear-gradient(155deg, #8360c3, #2ebf91);
+}
+.Mess .main-chat .body-chat .each-message {
+    padding: 20px;
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    height: auto;
+   
+}
+.Mess .main-chat .body-chat .my-message {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.Mess .main-chat .body-chat .my-message > div {
+    background-color: #3bbd62 !important;
+    color: #EEE !important;
+}
+.Mess .main-chat .body-chat .each-message > div {
+    width: auto;
+    max-width: 200px;
+    padding: 5px 20px;
+    overflow: hidden;
+    height: auto;
+    display: inline-flex;
+    flex-direction: column;
+    background-color: #cdd5cb;
+    border: 1px solid #EEE;
+    border-radius: 20px;
+}
+
+.Mess .main-chat .body-chat .user-message {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.Mess .main-chat .body-chat .my-message .user-message p {
+    color: #CCC !important;
+}
+.Mess .main-chat .body-chat .each-message .user-message p {
+    margin: 0px;
+    color: #555;
+    text-align: center;
+}
+.Mess .main-chat .body-chat .content-message {
+    display: flex;
+    flex-direction: row;
+}
+.Mess .main-chat .body-chat .content-message img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+.Mess .main-chat .body-chat .key-mess {
+    width: 100%;
+}
+.Mess .main-chat .body-chat .key-mess p {
+    text-align: center;
+    color: #CCC;
+}
+.Mess .main-chat .field-value {
+    position: relative;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+}
+.Mess .main-chat .field-value input {
+    width: 85%;
+    height: 90%;
+    padding: 0px 20px;
+}
+.Mess .main-chat .field-value div {
+    width: 15%;
+    height: 100%;
+    overflow: hidden;
+}
+.Mess .main-chat .field-value button {
+    width: 100%;
+    height: 100%;
+}
+@media(max-width: 600px) {
+    .Mess .tab-room .title-tab-room img {
+        display: flex;
+    }
+    .Mess .main-chat .title-chat .back {
+        display: flex;
+    }
+    .Mess .tab-room {
+        transform: translateX(-1000px);
+        width: 100%;
+    }
+    .Mess .open-tab {
+        transform: translateX(0);
+        transition: 0.5s;
+        position: absolute;
+    }
+    .Mess .main-chat {
+        width: 100%;
+        transform: translateX(1000px);
+    }
+    .Mess .open-main {
+        position: absolute;
+        transform: translateX(0);
+        transition: 0.5s;
+    }
+}

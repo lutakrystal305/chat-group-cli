@@ -1,6 +1,30 @@
 body {
     background-color: #123112;
   }
+  .btn-wel {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    top: 100px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-wel button{
+    margin-right: 150px;
+    color: #04297b;
+    font-weight: bold;
+    font-size: 16px;
+    background: linear-gradient(80deg,#2980B9, #6DD5FA, #FFFFFF);
+    border: 1px solid #666;
+    border-radius: 20px;
+    padding: 15px 30px 15px 30px;
+  }
+  .btn-wel button:hover {
+    
+    color: #FFF;
+    background: linear-gradient(60deg,#8360c3, #2ebf91);
+  }
   .circle {
     position: absolute;
     top: 0;
@@ -116,4 +140,49 @@ body {
   .card .content .zzz {
     color: #AAA;
   }
-  
+  @media(max-width: 600px) {
+    .btn-wel button {
+      margin-right: unset !important;
+    }
+    .container .card {
+      width: 240px !important;
+      height: 140px !important;
+    }
+    .container .card:nth-child(2) {
+      margin-bottom: unset !important;
+    }
+    .circle {
+      clip-path: circle(300px at right 800px) !important;
+    }
+    .bg-item {
+      width: 200px;
+      overflow: hidden;
+      right: 0px !important;
+    }
+    .bg-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card .content .msg-logo {
+      left: 15px !important;
+    }
+    .card .content .zz {
+      display: flex;
+      flex-direction: column;
+      margin-right: 40px !important;
+      font-size: 0.75em !important;
+    
+    }
+    .card .content .zz p {
+      display: inline-block;
+      height: auto;
+      width: 100%;
+    }
+    .card .content .noel {
+      left: -10px !important;
+    }
+    .card .content .zzz {
+      margin-right: 40px !important;
+    }
+  }

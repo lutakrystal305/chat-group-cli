@@ -8,12 +8,14 @@ const SignUp = () => {
     const [valuePass2, setValuePass2] = useState('');
     const [valuePass, setValuePass] = useState('');
     const [valueGender, setValueGender] = useState('');
+    const [valueName, setValueName] = useState('');
     const [err, setErr] = useState(false);
     const [msgErr, setMsgErr] = useState('');
 
     const dispatch = useDispatch();
     const validateMail = new RegExp(/^([a-z0-9]{6,25})?(@gmail.com)$/g);
-	const validatePass = new RegExp(/^([a-z0-9]{6,20})$/g);
+    const validatePass = new RegExp(/^([a-z0-9]{6,20})$/g);
+    const validateName = new RegExp(/^([a-zA-Z]{2,20}?)$/g);
 
     const handleChange1 = (event) => {
         setValueMail(event.target.value);
@@ -27,8 +29,15 @@ const SignUp = () => {
     const handleChange4 = (event) => {
         setValueGender(event.target.value);
     }
+    const handleChange5 = (event) => {
+        setValueName(event.target.value);
+    }
     const handleClick = () => {
-        if (validateMail.test(valueMail) === false) {
+        if (validateName.test(valueName) === false) {
+            setErr(true);
+            setMsgErr('Your Name was wrong syntax!');
+            setValueName('')
+        } else if (validateMail.test(valueMail) === false) {
 			setErr(true);
             setMsgErr('Your Mail was wrong syntax!');
             setValueMail('');
@@ -48,13 +57,14 @@ const SignUp = () => {
             setMsgErr('You need click your gender!');
         } else {
             let newUser = {
+                name: valueName,
                 email: valueMail,
                 password: valuePass,
                 sex: valueGender
             };
             console.log(newUser);
             axios
-                .post('http://localhost:9999/user/create', newUser)
+                .post('https://chat-group-sv.herokuapp.com/user/create', newUser)
                 .then((res) => {
                     if (res.data) {
                         dispatch({type: 'REGISTER'});
@@ -72,6 +82,7 @@ const SignUp = () => {
                     <ErrAlert >{msgErr}</ErrAlert>
                     : ''
                 }
+                <input type='text' onChange={handleChange5} placeholder='Your name you want create!' value={valueName} />
                 <input type='text' onChange={handleChange1} placeholder='Your mail you want create!' value={valueMail}/>
                 <input type='password' onChange={handleChange2} placeholder='Your password!' value={valuePass}/>
                 <input type='password' onChange={handleChange3} placeholder='Your password again!' value={valuePass2} />

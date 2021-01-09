@@ -25,6 +25,9 @@ const UnLogged = () => {
     useEffect(() => {
         checkEffect();
     },[onRegister.isRegister]);
+    useEffect(() => {
+        document.title = 'Login'
+    }, []);
     return(
         <div className='UnLogged' >
             <div className='bg-login'>

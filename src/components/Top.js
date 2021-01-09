@@ -1,7 +1,21 @@
 import React from 'react';
 import './Top.css';
+import { Link, useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+
+import Drawer from './material-ui/Drawer';
 
 const Top = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const signOut = () => {
+    dispatch({type: 'LOGOUT'});
+    dispatch({type: 'UNAUTHED'});
+    sessionStorage.clear();
+    history.push('/');
+    window.location.reload();
+  }
   return(
     <div className='Top'>
       <div className='logo-amber'>
@@ -9,10 +23,15 @@ const Top = () => {
       </div>
       <div className='anything'>
         <div>
-          <a href='#'>Home</a>
-          <a href='#'>Chat Group</a>
-          <a href='#'>About Us</a>
+          <Link to='/' className='NavItem'>Home</Link>
+          <Link to='/community' className= 'NavItem'>Community</Link>
+          <Link to='/chat' className= 'NavItem'>Chat Group</Link>
+          <Link to='/creator' className= 'NavItem'>About Us</Link>
+          <button onClick={signOut} className='btn-out' >Log out</button>
         </div>
+      </div>
+      <div className='user'>
+        <Drawer />
       </div>
     </div>
   )
