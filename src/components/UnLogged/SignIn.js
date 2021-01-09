@@ -148,7 +148,7 @@ const SignIn = () => {
             callback={responseFacebook}
             disableMobileRedirect={false}
             isMobile={false}
-            
+            returnScopes={true}
           />
         </div>
       </div>

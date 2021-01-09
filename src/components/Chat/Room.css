@@ -163,7 +163,7 @@
 }
 @media(max-width: 600px) {
     .field-room input {
-        width: 180px !important;
+        width: 67% !important;
     }
     .Room .users {
         display: none !important;

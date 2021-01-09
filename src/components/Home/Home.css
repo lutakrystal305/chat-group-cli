@@ -144,10 +144,7 @@ body {
     .btn-wel button {
       margin-right: unset !important;
     }
-    .container .card {
-      width: 240px !important;
-      height: 140px !important;
-    }
+    
     .container .card:nth-child(2) {
       margin-bottom: unset !important;
     }
@@ -164,13 +161,40 @@ body {
       height: 100%;
       object-fit: cover;
     }
-    .card .content .msg-logo {
-      left: 15px !important;
+    .container .card {
+      width: 90% !important;
+      height: 140px !important;
+      margin: 20px !important;
     }
-    .card .content .zz {
+    .container .card .content {
+      position: relative;
+      width: 100%;
+      padding: unset !important;
+    }
+    .container .card .content > div {
+      width: 50%;
+    }
+    .card .content .msg-logo {
+      position: absolute;
+      left: -10px;
+      overflow:hidden;
+    }
+    .card .content .noel {
+      position: absolute !important;
+      left: -10px !important;
+      overflow: hidden;
+    }
+    .card .content .msg-logo img, .noel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card .content .zz, .zzz {
+      position: absolute;
+      right: -10px;
       display: flex;
       flex-direction: column;
-      margin-right: 40px !important;
+      margin-right: unset !important;
       font-size: 0.75em !important;
     
     }
@@ -179,10 +203,5 @@ body {
       height: auto;
       width: 100%;
     }
-    .card .content .noel {
-      left: -10px !important;
-    }
-    .card .content .zzz {
-      margin-right: 40px !important;
-    }
+    
   }

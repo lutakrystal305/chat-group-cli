@@ -178,10 +178,14 @@
     .Creator {
         height: 100vh !important; 
     }
+    .profile {
+        width: 100%;
+    }
     .each-profile {
-        width: 230px !important;
+        width: 80% !important;
         font-size: 0.8em;
-        left: -160px !important;
+        left: 0 !important;
+        padding: 15px !important;
     }
     .each-profile:nth-child(1) {
         margin-left: 30px !important;
