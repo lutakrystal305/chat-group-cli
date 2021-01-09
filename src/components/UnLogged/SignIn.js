@@ -101,7 +101,7 @@ const SignIn = () => {
         userID: response.id
       };
       axios
-        .post("https://chat-group-sv/user/loginFB", user)
+        .post("http://localhost:9999/user/loginFB", user)
         .then((res) => {
           if (res.data.token) {
             dispatch({type: 'LOGGED', token: res.data.token});
