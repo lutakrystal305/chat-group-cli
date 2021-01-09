@@ -8,7 +8,7 @@ import Drawer from './material-ui/Drawer';
 const Top = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const authed = useSelector(state => checkLogged.state);
+  const authed = useSelector(state => state.checkLogged);
 
   const signOut = () => {
     dispatch({type: 'LOGOUT'});
