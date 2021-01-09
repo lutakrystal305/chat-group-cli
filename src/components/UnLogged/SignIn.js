@@ -90,6 +90,7 @@ const SignIn = () => {
     }
   }
   const responseFacebook = (response) => {
+    console.log(response);
     if (response.accessToken) {
       sessionStorage.setItem('accessToken', response.accessToken.toString());
       const user = {
@@ -97,6 +98,8 @@ const SignIn = () => {
         name: response.name,
         phone: response.phone,
         sex: response.gender,
+        profile: response.public_profile,
+        date: response.user_birthday,
         urlAvt: response.picture.data.url,
         userID: response.id
       };
@@ -140,7 +143,8 @@ const SignIn = () => {
           <FacebookLogin
             appId="454409709303698" //APP ID NOT CREATED YET
 
-            fields="name,email,picture"
+            fields="name,email,picture,gender"
+            scope="public_profile"
             callback={responseFacebook}
             disableMobileRedirect={false}
             isMobile={false}

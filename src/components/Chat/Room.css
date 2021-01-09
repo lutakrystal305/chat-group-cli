@@ -166,9 +166,9 @@
         width: 180px !important;
     }
     .Room .users {
-        display: none;
+        display: none !important;
     }
     .Room .rooms {
-        display: none;
+        display: none !important;
     }
 }
