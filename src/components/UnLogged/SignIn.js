@@ -90,7 +90,7 @@ const SignIn = () => {
     }
   }
   const responseFacebook = (response) => {
-    
+    console.log('aaaa');
     if (response.accessToken) {
       sessionStorage.setItem('accessToken', response.accessToken.toString());
       const user = {
@@ -100,6 +100,7 @@ const SignIn = () => {
         urlAvt: response.picture.data.url,
         userID: response.id
       };
+      console.log(user);
       axios
         .post("http://localhost:9999/user/loginFB", user)
         .then((res) => {
