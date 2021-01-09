@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
+import FacebookLogin from 'react-facebook-login';
 import './login.css';
 import SucAlert from '../material-ui/Alert';
 import ErrAlert from '../bootstrap/Alert';
@@ -88,6 +89,36 @@ const SignIn = () => {
       }
     }
   }
+  const responseFacebook = (response) => {
+    
+    if (response.accessToken) {
+      sessionStorage.setItem('accessToken', response.accessToken.toString());
+      const user = {
+        email: response.email,
+        name: response.name,
+        phone: response.phone,
+        urlAvt: response.picture.data.url,
+        userID: response.id
+      };
+      axios
+        .post("https://chat-group-sv/user/loginFB", user)
+        .then((res) => {
+          if (res.data.token) {
+            dispatch({type: 'LOGGED', token: res.data.token});
+            sessionStorage.setItem("token", res.data.token.toString());
+          }
+          checkAuth(res.data.token);
+        })
+        .catch((err) => {
+          if (err.response === undefined) {
+            alert(err);
+          } else if (err.response.status === 401) {
+            setErr(true);
+            setMsgErr(err.response.data.msg);
+          }
+        });
+    }
+  }
   return(
     <div className={classNames('SignIn', {'onAlert': onRegister.isRegister})}>
       <div className='title-item'>
@@ -104,7 +135,18 @@ const SignIn = () => {
         }
         <input type='text' placeholder='Email' onKeyUp={handleKeyUp} onChange={handleChangeMail} value={valueMail}/>
         <input type='password' placeholder='Password' onKeyUp={handleKeyUp} onChange={handleChangePass} value={valuePass} />
-        <button onClick={handleLogin} className='click-post' > Login </button>
+        <div>
+          <button onClick={handleLogin} className='click-post' > Login </button>
+          <FacebookLogin
+            appId="454409709303698" //APP ID NOT CREATED YET
+
+            fields="name,email,picture"
+            callback={responseFacebook}
+            disableMobileRedirect={false}
+            isMobile={false}
+            
+          />
+        </div>
       </div>
     </div>
   )
