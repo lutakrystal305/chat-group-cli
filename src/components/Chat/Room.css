@@ -161,7 +161,7 @@
     border: 2px solid #00bf8f;
     background: linear-gradient(30deg, #11998e, #38ef7d);
 }
-.Room 
+
 @media(max-width: 600px) {
     .field-room input {
         width: 180px !important;

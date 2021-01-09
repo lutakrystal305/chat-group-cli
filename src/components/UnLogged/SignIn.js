@@ -96,6 +96,7 @@ const SignIn = () => {
         email: response.email,
         name: response.name,
         phone: response.phone,
+        sex: response.gender,
         urlAvt: response.picture.data.url,
         userID: response.id
       };
