@@ -104,7 +104,7 @@ const SignIn = () => {
         userID: response.id
       };
       axios
-        .post("https://chat-group-sv/user/loginFB", user)
+        .post("https://chat-group-sv.herokuapp.com/user/loginFB", user)
         .then((res) => {
           if (res.data.token) {
             dispatch({type: 'LOGGED', token: res.data.token});
