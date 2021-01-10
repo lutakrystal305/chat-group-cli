@@ -159,6 +159,11 @@
 .Mess .main-chat .body-chat .content-message {
     display: flex;
     flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+.Mess .main-chat .body-chat .content-message .sb-avatar {
+    margin-right: 10px !important;
 }
 .Mess .main-chat .body-chat .content-message img {
     width: 40px;
