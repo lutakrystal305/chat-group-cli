@@ -130,7 +130,8 @@ export default function TemporaryDrawer(props) {
         <React.Fragment key='right'>
           {authed.isAuthed?
             (user.userID?
-            <Avatar facebookId={user.userID} size={40} round={true} />
+            <Avatar facebookId={user.userID} size={40} round={true} 
+            onClick={toggleDrawer('right', true)} />
             :<img src={avt} alt='avt' className='avt-user' width={40} 
               
               onClick={toggleDrawer('right', true)}
