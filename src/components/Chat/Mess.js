@@ -189,7 +189,7 @@ const Mess = () => {
                                 </div>
                                 <div className='content-message'>
                                     {x.from.userID ?
-                                    <Avatar facebookId={x.userID} size={30} />
+                                    <Avatar facebookId={x.from.userID} size={30} />
                                     :( x.from.sex === 'male' ?
                                         <img src={boy} alt='avt' width={30}/>
                                         : <img src={girl} alt='avt' width={30} />
