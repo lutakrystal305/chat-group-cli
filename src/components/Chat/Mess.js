@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Drawer2 from '../material-ui/Drawer2';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import Avatar from 'react-avatar';
 import boy from '../../img/boy.png';
 import girl from '../../img/girl.png';
 import close from '../../img/close.svg';
@@ -187,10 +188,12 @@ const Mess = () => {
                                     <p>{x.from.name}</p>
                                 </div>
                                 <div className='content-message'>
-                                    {x.from.sex === 'male' ?
+                                    {x.userID ?
+                                    <Avatar facebookId={x.userID} size={30} />
+                                    :( x.from.sex === 'male' ?
                                         <img src={boy} alt='avt' width={30}/>
                                         : <img src={girl} alt='avt' width={30} />
-                                    }
+                                    )}
                                     <p>{x.message}</p>
                                 </div>
                             </div>

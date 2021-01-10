@@ -5,6 +5,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
+import Avatar from 'react-avatar';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -76,7 +77,10 @@ export default function TemporaryDrawer(props) {
         (<Link to='#' className='Link-user'>
           <ListItem button key='z1'>
               <div>
-                <img src={avt} alt='avt' className='avt-user' width={40} />
+                {user.userID?
+                <Avatar facebookId={user.userID} size={40} round={true} />
+                : <img src={avt} alt='avt' className='avt-user' width={40} />
+                }
                 <h6 className='user-name'>{user.name}</h6>
               </div>
           </ListItem>
@@ -125,7 +129,9 @@ export default function TemporaryDrawer(props) {
     <div>
         <React.Fragment key='right'>
           {authed.isAuthed?
-            (<img src={avt} alt='avt' className='avt-user' width={40} 
+            (user.userID?
+            <Avatar facebookId={user.userID} size={40} round={true} />
+            :<img src={avt} alt='avt' className='avt-user' width={40} 
               
               onClick={toggleDrawer('right', true)}
             />)

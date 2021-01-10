@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Avatar from 'react-avatar';
 import './Room.css';
 import boy from '../../img/boy.png';
 import girl from '../../img/girl.png';
@@ -112,10 +113,12 @@ const Room = () => {
                     {stateOnline.users && stateOnline.users.map(x => (
                     <div className='in4'>
                         <div className='avt'>
-                            {x.sex === 'male'?
+                            {x.userID ?
+                            <Avatar facebookId={x.userID} size={30} />
+                            :(x.sex === 'male'?
                             <img src={boy} alt='avt-boy' width={30} />
                             : <img src={girl} alt= 'avt-girl' width={30} />
-                            }
+                            )}
                         </div>
                         <div className='userZ'><p>{x.name}</p></div>
                     </div>
