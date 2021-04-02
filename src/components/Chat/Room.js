@@ -10,7 +10,9 @@ import girl from '../../img/girl.png';
 const Room = () => {
     const dispatch = useDispatch();
     const stateOnline = useSelector(state => state.messageSocket);
+    const loged = useSelector(state => state.login);
     const authed = useSelector(state => state.checkLogged);
+    axios.defaults.headers.common['Authorization'] = loged.token;
     let user = authed.user;
     if (!user) {
         user = JSON.parse(sessionStorage.getItem('user'));
